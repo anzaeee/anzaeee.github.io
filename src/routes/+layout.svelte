@@ -1,6 +1,8 @@
+export const prerender = true;
+
 <script lang="ts">
 	import '../app.css';
-	import { page } from '$app/stores';
+	import { page } from '$app/stores'
 
 	let { children } = $props();
 

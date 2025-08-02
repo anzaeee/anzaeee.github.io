@@ -1,11 +1,20 @@
 // svelte.config.js
 import adapter from '@sveltejs/adapter-static';
+import preprocess from 'svelte-preprocess';
 
 const config = {
+  preprocess: preprocess(),
+
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      fallback: 'index.html',
+      strict: false, 
+    }),
     paths: {
-      base: '', // No subpath
+      base: '', // this is fine if you're deploying at root of the domain
+    },
+    prerender: {
+      entries: ['*'],
     },
   },
 };
