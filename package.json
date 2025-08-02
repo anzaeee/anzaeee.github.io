@@ -1,10 +1,10 @@
 {
-	"name": "anzaeee-portfolio",
+	"name": "anzaeee.github.io",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
-	"repository": "https://github.com/anzaeee/anzaeee-portfolio",
-	"homepage": "https://anzaeee.github.io/anzaeee-portfolio/",
+	"repository": "https://github.com/anzaeee/anzaeee.github.io/",
+	"homepage": "https://anzaeee.github.io/",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -13,7 +13,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"predeploy": "npm run build",
-		"deploy": "npx gh-pages -d build"
+		"deploy": "npm run build && cp -r build/* ../anzaeee.github.io && cd ../anzaeee.github.io && git add . && git commit -m 'deploy' && git push origin main"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.0",
