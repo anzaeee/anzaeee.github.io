@@ -8,10 +8,10 @@ const config = {
   kit: {
     adapter: adapter({
       fallback: 'index.html',
-      strict: false, 
+      // Remove strict here — it's not a valid option for adapter-static
     }),
     paths: {
-      base: '', // this is fine if you're deploying at root of the domain
+      base: '', 
     },
     prerender: {
       entries: ['*'],
