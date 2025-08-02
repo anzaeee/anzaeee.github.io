@@ -11,7 +11,7 @@ const config = {
       // Remove strict here — it's not a valid option for adapter-static
     }),
     paths: {
-      base: '', 
+      base: '/project-name', 
     },
     prerender: {
       entries: ['*'],
