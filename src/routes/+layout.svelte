@@ -1,5 +1,3 @@
-export const prerender = true;
-
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/stores'
@@ -14,6 +12,7 @@ export const prerender = true;
 		{ name: 'Contact', href: '/contact' },
 		{ name: 'Blog', href: '/blog' }
 	];
+	export const prerender = true;
 </script>
 
 <svelte:head>
