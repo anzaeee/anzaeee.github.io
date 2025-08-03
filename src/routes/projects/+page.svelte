@@ -2,6 +2,8 @@
 	import { onMount } from 'svelte';
 	import tictactoeData from '$lib/tictactoe-data.json';
 	import typingData from '$lib/typing-data.json';
+	import TypingChallenge from '../../lib/components/TypingChallenge.svelte';
+	import BallProtectorGame from '../../lib/components/BallProtectorGame.svelte'; // Import the new game component
 
 	type Player = 'X' | 'O' | null;
 	type Difficulty = 'easy' | 'medium' | 'hard';
@@ -545,6 +547,17 @@
 				</div>
 			</div>
 
+			<!-- New Ball Protection Game Section -->
+			<div class="ball-protection-game-section">
+				<div class="game-container">
+					<div class="game-header">
+						<h2>Ball Protector</h2>
+						<p>Protect the falling ball from hitting the ground!</p>
+					</div>	
+					<BallProtectorGame /> <!-- Include the new game component here -->
+				</div>
+			</div>
+
 			<div class="coming-soon">
 				<div class="card">
 					<h3>More Projects Coming Soon</h3>
@@ -605,6 +618,7 @@
 		transform: translateY(50px);
 		opacity: 0;
 		transition: all 0.8s ease;
+		overflow: auto; /* Add this line */
 	}
 
 	.game-container.visible {
@@ -651,7 +665,8 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 0.5rem;
-		max-width: 300px;
+		max-width: 100%; /* Change to 100% for responsiveness */
+		width: clamp(250px, 90vw, 300px); /* Add a clamped width for better control */
 		margin: 2rem auto;
 		transition: transform 0.3s ease;
 	}
@@ -797,6 +812,8 @@
 		border-radius: 1rem;
 		padding: 2rem;
 		border: 1px solid var(--border-color);
+		max-width: 100%; /* Ensure responsiveness */
+		margin: 0 auto;
 	}
 
 	.typing-setup {
