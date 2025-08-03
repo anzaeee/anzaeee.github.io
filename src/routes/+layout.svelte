@@ -9,8 +9,7 @@
 		{ name: 'About', href: '/about' },
 		{ name: 'Projects', href: '/projects' },
 		{ name: 'Resume', href: '/resume' },
-		{ name: 'Contact', href: '/contact' },
-		{ name: 'Blog', href: '/blog' }
+		{ name: 'Contact', href: '/contact' }
 	];
 	export const prerender = true;
 </script>
