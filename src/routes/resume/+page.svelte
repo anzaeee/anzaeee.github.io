@@ -18,49 +18,30 @@
 
 	const educationJourney: EducationStage[] = [
 		{
-			id: 'primary',
-			title: 'Primary School',
-			period: '2003 - 2009',
-			institution: 'Sunshine Elementary School',
-			description: 'Where it all began - my first encounter with computers and problem-solving.',
+			id: 'middle',
+			title: 'O Levels',
+			period: '2012 - 2016',
+			institution: 'Roots School System',
+			description: 'The beginning of she',
 			achievements: [
-				'First computer programming experience in Logo',
-				'Won school math competition (3 consecutive years)',
-				'Led the school robotics club project',
-				'Perfect attendance award',
-				'Student council representative'
+				'3x Honorable mention debator.',
+				'Learned basic HTML but never worked on it',
+				'Spelling Bee participant',
+				'Pre-medical track'
 			],
 			icon: '🎒',
-			color: '#10b981'
-		},
-		{
-			id: 'middle',
-			title: 'Middle School',
-			period: '2009 - 2012',
-			institution: 'Tech Valley Middle School',
-			description: 'Deepened my passion for technology and discovered web development.',
-			achievements: [
-				'Built first website for school science fair',
-				'Learned HTML, CSS, and basic JavaScript',
-				'Regional winner in programming contest',
-				'Founded the Computer Club',
-				'Mentored younger students in basic coding'
-			],
-			icon: '💻',
 			color: '#8b5cf6'
 		},
 		{
 			id: 'high',
-			title: 'High School',
-			period: '2012 - 2016',
-			institution: 'Innovation High School',
-			description: 'Advanced programming skills and leadership development.',
+			title: 'A Levels',
+			period: '2016 - 2019',
+			institution: 'Edwardes College Peshawar',
+			description: 'The next chapter',
 			achievements: [
-				'Graduated Summa Cum Laude (4.0 GPA)',
-				'Created mobile app with 1000+ downloads',
-				'Internship at local tech startup',
-				'National Merit Scholar finalist',
-				'Varsity programming team captain'
+				'Due to medical emergency, took a gap year and realigned my goals',
+				'Published writer on AO3 and secured 100,000+ hits and kudos',
+				'Pre-engineering track with extras in Urdu and Economics',
 			],
 			icon: '🎓',
 			color: '#f59e0b'
@@ -68,15 +49,14 @@
 		{
 			id: 'college',
 			title: 'University',
-			period: '2016 - 2020',
-			institution: 'State University - Computer Science',
+			period: '2019 - 2023',
+			institution: 'National University of Computer and Emerging Sciences',
 			description: 'Comprehensive computer science education with focus on software engineering.',
 			achievements: [
 				'Bachelor of Science in Computer Science',
-				'Dean\'s List for 6 semesters',
-				'Teaching Assistant for Data Structures course',
-				'Published research paper on machine learning',
-				'Led hackathon team to victory (3 times)'
+				'DevOps, Knowledge Graphs and Distributed Engineering electives - Scalable development',
+				'Top 10 finalist for GDSC Tech Idea competition, finished Top 5',
+				'Final Year Project in Natural Language Processing & Digital Image Processing'
 			],
 			icon: '🏛️',
 			color: '#ef4444'
@@ -84,15 +64,16 @@
 		{
 			id: 'career',
 			title: 'Professional Career',
-			period: '2020 - Present',
+			period: '2022 - Present',
 			institution: 'Tech Industry',
 			description: 'Applying knowledge to solve real-world problems and mentor others.',
 			achievements: [
-				'Senior Full Stack Developer at TechCorp Inc.',
-				'Led architecture for microservices serving 1M+ users',
-				'Reduced deployment time by 60% through CI/CD',
-				'Mentored 15+ junior developers',
-				'Speaker at 3 tech conferences'
+				'Administrative Assistant at Foretheta automating workflows and hiring super engineers',
+				'Software Engineer internship, learning heads-on development and delegation',
+				'Advocated accessibility practices in design for end user at startup AIO for inclusive UI/UX',
+				'Mentored 5+ junior interns across Product Management, Figma and rapid prototpying',
+				'10x QA Delivery Manager - Pioneered an end-to-end testing framework with Playwright from the core',
+				'Currently leading the charge at Thinkrr.ai to build Voice AI solutions meant to scale'
 			],
 			icon: '🚀',
 			color: '#00ffff'
@@ -147,7 +128,7 @@
 					<h2>🎯 Interactive Resume Experience</h2>
 					<p>
 						Take a journey through my educational path and discover how each stage shaped my career in technology. 
-						From elementary school programming to leading enterprise software development.
+						From the start of my educational/professional life to leading enterprise software development.
 					</p>
 					<button class="btn start-journey-btn" on:click={startJourney}>
 						🚀 Begin the Journey
@@ -265,15 +246,15 @@
 				</div>
 				<div class="resume-stats">
 					<div class="resume-stat">
-						<span class="stat-number">5+</span>
+						<span class="stat-number">2+</span>
 						<span class="stat-label">Years Experience</span>
 					</div>
 					<div class="resume-stat">
-						<span class="stat-number">20+</span>
+						<span class="stat-number">7+</span>
 						<span class="stat-label">Technologies</span>
 					</div>
 					<div class="resume-stat">
-						<span class="stat-number">10+</span>
+						<span class="stat-number">5+</span>
 						<span class="stat-label">Major Projects</span>
 					</div>
 				</div>
@@ -285,7 +266,7 @@
 			<div class="info-grid">
 				<div class="info-card">
 					<h3>🎯 Current Focus</h3>
-					<p>Leading development of scalable microservices architecture and mentoring the next generation of developers.</p>
+					<p>Leading development of scalable client-server architecture by ensuring timely delivery without compromising on software quality</p>
 				</div>
 				<div class="info-card">
 					<h3>🌟 Philosophy</h3>
@@ -293,7 +274,7 @@
 				</div>
 				<div class="info-card">
 					<h3>🚀 Future Goals</h3>
-					<p>Expanding into AI/ML applications and contributing to open-source projects that make a difference.</p>
+					<p>Expanding into AI/ML powered development and deployment to make solutions meant to last a lifetime.</p>
 				</div>
 			</div>
 		</div>

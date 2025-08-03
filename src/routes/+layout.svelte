@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>Portfolio | Developer & Creator</title>
+	<title>Shanzay Asad | Product Engineer</title>
 	<meta name="description" content="A modern dark portfolio showcasing development projects and skills" />
 	<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 </svelte:head>
@@ -27,7 +27,7 @@
 			<div class="nav-content">
 				<div class="logo">
 					<a href="/" class="logo-link">
-						<span class="logo-text">Portfolio</span>
+						<span class="logo-text">Shanzay Asad</span>
 					</a>
 				</div>
 				
@@ -59,11 +59,10 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="footer-content">
-				<p>&copy; 2024 Portfolio. Built with Svelte & passion.</p>
+				<p>&copy; 2025 Portfolio. Built with Svelte, Vercel & passion.</p>
 				<div class="footer-links">
-					<a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-					<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-					<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+					<a href="https://github.com/anzaeee" target="_blank" rel="noopener noreferrer">GitHub</a>
+					<a href="https://www.linkedin.com/in/anzay/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 				</div>
 			</div>
 		</div>
