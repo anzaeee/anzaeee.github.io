@@ -31,6 +31,16 @@
 	function navigateToGame(gameId: string) {
 		goto(`/games/${gameId}`);
 	}
+
+	let isMobile = false;
+	function checkMobile() {
+		isMobile = window.innerWidth <= 768;
+	}
+
+	if (typeof window !== 'undefined') {
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+	}
 </script>
 
 <div class="projects-page">
@@ -41,17 +51,31 @@
 		</div>
 
 		<div class="games-grid">
-			{#each games as game}
-				<button 
-					class="game-card" 
-					on:click={() => navigateToGame(game.id)}
-					on:keydown={(e) => e.key === 'Enter' && navigateToGame(game.id)}
-				>
-					<div class="game-icon">{game.icon}</div>
-					<h2>{game.title}</h2>
-					<p>{game.description}</p>
-				</button>
-			{/each}
+			{#if isMobile}
+				{#each games.filter(g => g.id === 'tictactoe') as game}
+					<button 
+						class="game-card" 
+						on:click={() => navigateToGame(game.id)}
+						on:keydown={(e) => e.key === 'Enter' && navigateToGame(game.id)}
+					>
+						<div class="game-icon">{game.icon}</div>
+						<h2>{game.title}</h2>
+						<p>{game.description}</p>
+					</button>
+				{/each}
+			{:else}
+				{#each games as game}
+					<button 
+						class="game-card" 
+						on:click={() => navigateToGame(game.id)}
+						on:keydown={(e) => e.key === 'Enter' && navigateToGame(game.id)}
+					>
+						<div class="game-icon">{game.icon}</div>
+						<h2>{game.title}</h2>
+						<p>{game.description}</p>
+					</button>
+				{/each}
+			{/if}
 		</div>
 
 		<div class="coming-soon">

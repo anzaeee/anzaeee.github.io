@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-	import { page } from '$app/stores'
+	import { page } from '$app/stores';
+	import { writable } from 'svelte/store';
 
 	let { children } = $props();
 
@@ -12,6 +13,10 @@
 		{ name: 'Contact', href: '/contact' }
 	];
 	export const prerender = true;
+
+	const menuOpen = writable(false);
+	function closeMenu() { menuOpen.set(false); }
+	function toggleMenu() { menuOpen.update(v => !v); }
 </script>
 
 <svelte:head>
@@ -30,23 +35,24 @@
 					</a>
 				</div>
 				
-				<div class="nav-links">
+				<div class="nav-links { $menuOpen ? 'open' : '' }">
 					{#each navItems as item}
 						<a 
 							href={item.href} 
 							class="nav-link"
 							class:active={$page.url.pathname === item.href}
+							onclick={closeMenu}
 						>
 							{item.name}
 						</a>
 					{/each}
 				</div>
 				
-				<div class="mobile-menu-btn">
+				<button class="mobile-menu-btn" onclick={toggleMenu} aria-label="Open navigation" type="button">
 					<span></span>
 					<span></span>
 					<span></span>
-				</div>
+				</button>
 			</div>
 		</div>
 	</nav>
@@ -66,6 +72,10 @@
 			</div>
 		</div>
 	</footer>
+
+	{#if $menuOpen}
+		<button class="mobile-backdrop" onclick={closeMenu} aria-label="Close navigation" type="button"></button>
+	{/if}
 </div>
 
 <style>
@@ -104,6 +114,30 @@
 		display: flex;
 		gap: 2rem;
 		align-items: center;
+	}
+
+	.nav-links.open {
+		display: flex !important;
+		flex-direction: column;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100vw;
+		background: var(--secondary-bg);
+		z-index: 200;
+		padding: 2rem 0 1rem 0;
+		box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+		gap: 2rem;
+		align-items: flex-start;
+	}
+	.mobile-backdrop {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(0,0,0,0.3);
+		z-index: 150;
 	}
 
 	.mobile-menu-btn {
@@ -156,7 +190,9 @@
 		.nav-links {
 			display: none;
 		}
-
+		.nav-links.open {
+			display: flex !important;
+		}
 		.mobile-menu-btn {
 			display: flex;
 		}

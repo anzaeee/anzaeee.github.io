@@ -140,11 +140,13 @@
 		{#each words as word, wordIndex}
 			<span class="word" class:current={wordIndex === currentWordIndex}>
 				{#each word.split('') as char, charIndex}
-					<span class={getCharClass(wordIndex, charIndex, char)}>{char}</span>
+					<span class="char {getCharClass(wordIndex, charIndex, char)} {wordIndex < currentWordIndex ? 'typed' : ''} {wordIndex === currentWordIndex && charIndex < currentInput.length ? 'typed' : ''}">
+						{char}
+					</span>
 				{/each}
 				{#if wordIndex === currentWordIndex && currentInput.length > word.length}
 					{#each currentInput.substring(word.length).split('') as extraChar}
-						<span class="incorrect extra">{extraChar}</span>
+						<span class="char incorrect extra">{extraChar}</span>
 					{/each}
 				{/if}
 			</span>
@@ -184,8 +186,8 @@
 	}
 
 	.words-display {
-		font-size: 1.5rem;
-		line-height: 1.8;
+		font-size: 1.3rem;
+		line-height: 2;
 		color: var(--text-primary);
 		margin-bottom: 1.5rem;
 		background-color: var(--primary-bg);
@@ -193,6 +195,9 @@
 		border-radius: 0.8rem;
 		border: 1px solid var(--border-color);
 		text-align: left;
+		word-break: break-word;
+		max-width: 100%;
+		overflow-x: auto;
 	}
 
 	.word {
@@ -201,7 +206,7 @@
 	}
 
 	.word.current {
-		background-color: rgba(var(--accent-cyan-rgb), 0.2);
+		background-color: rgba(var(--accent-cyan-rgb,0,255,255), 0.2);
 		border-radius: 0.3rem;
 		padding: 0 0.2rem;
 	}
@@ -307,5 +312,18 @@
 	.start-overlay p {
 		font-size: 1.2rem;
 		margin-bottom: 1.5rem;
+	}
+	@media (max-width: 600px) {
+		.typing-challenge-container {
+			padding: 1rem;
+		}
+		.words-display {
+			font-size: 1rem;
+			padding: 0.5rem;
+		}
+		.typing-input {
+			font-size: 1rem;
+			padding: 0.7rem;
+		}
 	}
 </style>
