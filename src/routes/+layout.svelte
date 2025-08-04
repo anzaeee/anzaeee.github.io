@@ -125,11 +125,26 @@
 		width: 100vw;
 		background: var(--secondary-bg);
 		z-index: 200;
-		padding: 2rem 0 1rem 0;
+		padding: 2rem;
 		box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-		gap: 2rem;
+		gap: 1.5rem;
 		align-items: flex-start;
+		border-top: 1px solid var(--border-color);
 	}
+
+	.nav-links.open .nav-link {
+		width: 100%;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		transition: all 0.3s ease;
+		border: 1px solid transparent;
+	}
+
+	.nav-links.open .nav-link:hover {
+		background-color: var(--hover-bg);
+		border-color: var(--accent-cyan);
+	}
+
 	.mobile-backdrop {
 		position: fixed;
 		top: 0;
@@ -138,6 +153,8 @@
 		height: 100vh;
 		background: rgba(0,0,0,0.3);
 		z-index: 150;
+		border: none;
+		cursor: pointer;
 	}
 
 	.mobile-menu-btn {
@@ -145,6 +162,15 @@
 		flex-direction: column;
 		cursor: pointer;
 		gap: 4px;
+		background: none;
+		border: none;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		transition: background-color 0.3s ease;
+	}
+
+	.mobile-menu-btn:hover {
+		background-color: var(--hover-bg);
 	}
 
 	.mobile-menu-btn span {
@@ -152,6 +178,7 @@
 		height: 3px;
 		background: var(--accent-cyan);
 		transition: all 0.3s ease;
+		border-radius: 2px;
 	}
 
 	.main-content {
